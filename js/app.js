@@ -77,7 +77,6 @@ function showDetails(breed) {
     img.src = breed.image;
     img.classList.add('img-fluid','rounded-3');
     img.alt = breed.name;
-    img.style.minWidth = '470px';
     modalBody.appendChild(img);
 
     // Cria o elemento div e adiciona a classe 'detalhes'
