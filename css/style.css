@@ -21,9 +21,6 @@ body, html, h1, h2, h3, h4, h5, h6, a{
     object-fit: contain;
     border-radius: 50px;
   }
-  body {
-    background-image: url('./img/01.jpg');
-  }
   .card-fundo{
     width: 100%;
     background-color: rgba(138, 138, 138, 0.5);
