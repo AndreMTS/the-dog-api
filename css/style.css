@@ -7,6 +7,16 @@ body, html, h1, h2, h3, h4, h5, h6, a{
     min-width: 400px;
     box-shadow: 1px 1px 7px 2px #cccccc;
 }
+@media (max-width: 450px) {
+  .card-style {
+    min-width: 200px;
+  }
+}
+@media (max-width: 380px) {
+  .card-style {
+    min-width: 200px;
+  }
+}
 .card-style:hover{
     box-shadow: 1px 1px 7px 2px #7c7c7c;
     background-color: rgb(209, 209, 209)
