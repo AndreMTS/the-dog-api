@@ -17,14 +17,14 @@ function getBreeds() {
 
             breeds.forEach(breed => {
                 let card = document.createElement('div');
-                card.classList.add('card', 'mb-3', 'col-md-3', 'col-sm-6', 'col-xs-12', 'p-3', 'm-2','card-style');
+                card.classList.add('card', 'mb-3', 'col-md-3', 'col-sm-6', 'col-xs-12', 'p-3', 'm-2', 'card-style');
                 let row = document.createElement('div');
                 row.classList.add('row', 'g-0');
                 let col = document.createElement('div');
                 col.classList.add('col-md-4');
                 let img = document.createElement('img');
                 img.src = breed.image;
-                img.classList.add('img-fluid');
+                img.classList.add('card-img');
                 img.alt = breed.name;
 
                 col.appendChild(img);
@@ -61,7 +61,7 @@ function showDetails(breed) {
     modalHeader.classList.add('modal-header');
     let modalTitle = document.createElement('h5');
     modalTitle.classList.add('modal-title');
-    modalTitle.textContent = breed.name;
+    modalTitle.textContent = 'Nome: ' + breed.name;
     let closeButton = document.createElement('button');
     closeButton.type = 'button';
     closeButton.classList.add('btn-close');
@@ -70,29 +70,37 @@ function showDetails(breed) {
     modalHeader.appendChild(modalTitle);
     modalHeader.appendChild(closeButton);
     modalContent.appendChild(modalHeader);
+    let divDescription = document.createElement('div');
     let modalBody = document.createElement('div');
     modalBody.classList.add('modal-body');
     let img = document.createElement('img');
     img.src = breed.image;
-    img.classList.add('img-fluid');
+    img.classList.add('img-fluid','rounded-3');
     img.alt = breed.name;
     modalBody.appendChild(img);
+
+    // Cria o elemento div e adiciona a classe 'detalhes'
+    let details = document.createElement('div');
+    details.classList.add('detalhes','border' ,'border-5','p-2', 'rounded','mt-2');
+
     let temperament = document.createElement('p');
     temperament.classList.add('card-text');
     temperament.innerHTML = `<strong>Temperamento:</strong> ${breed.temperament}`;
-    modalBody.appendChild(temperament);
+    details.appendChild(temperament);
     let lifeSpan = document.createElement('p');
     lifeSpan.classList.add('card-text');
     lifeSpan.innerHTML = `<strong>Expectativa de vida:</strong> ${breed.life_span}`;
-    modalBody.appendChild(lifeSpan);
+    details.appendChild(lifeSpan);
     let height = document.createElement('p');
     height.classList.add('card-text');
     height.innerHTML = `<strong>Altura:</strong> ${breed.height} cm`;
-    modalBody.appendChild(height);
+    details.appendChild(height);
     let weight = document.createElement('p');
     weight.classList.add('card-text');
     weight.innerHTML = `<strong>Peso:</strong> ${breed.weight} kg`;
-    modalBody.appendChild(weight);
+    details.appendChild(weight);
+    // Adiciona a div 'detalhes' ao modal body
+    modalBody.appendChild(details);
     modalContent.appendChild(modalBody);
     modalDialog.appendChild(modalContent);
     modal.appendChild(modalDialog);
