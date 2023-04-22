@@ -1,0 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap');
+body, html, h1, h2, h3, h4, h5, h6, a{
+    font-family: 'Montserrat', sans-serif;
+}
+.card-style{
+    cursor: pointer;
+    min-width: 400px;
+    box-shadow: 1px 1px 7px 2px #cccccc;
+}
+.card-style:hover{
+    box-shadow: 1px 1px 7px 2px #7c7c7c;
+    background-color: rgb(209, 209, 209)
+}
+.card-title{
+    text-transform: uppercase;
+    font-size: 18px;
+}
